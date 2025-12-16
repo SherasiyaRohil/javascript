@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n =parseFloat(prompt("enter a number ="));
+        flag=0;
+        for(i=2; i<=n; i++)
+        {
+            if(n%i==0)
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            document.write(n+" is a   prime number");
+        }
+        else{
+            document.write(n+" is not  prime number");
+        }
+    </script>
+</body>
+</html>

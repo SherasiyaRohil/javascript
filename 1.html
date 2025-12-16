@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n1=parseFloat(prompt("enter a number 1="));
+        const n2=parseFloat(prompt("enter a number 2="));
+        const opration  =prompt("enter a opration(+ , - , * , / ) = ");
+        let  temp;
+        switch(opration){
+            case "+":
+            temp = n1 + n2;
+            break;
+            case "-":
+            temp = n1 - n2;
+            break;
+            case "*":
+            temp = n1 * n2;
+            break;
+            case "/":
+            temp = n1/n2;
+            break;
+            default : alert("invalid opration");
+            break;
+        }
+        document.write("result = ",temp);
+    </script>
+</body>
+</html>
