@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quick Sort in JavaScript</title>
+</head>
+<body>
+
+<h2>Quick Sort Array</h2>
+<div id="result" style="font-weight: bold; color: blue;"></div>
+
+<script>
+
+    function quickSort(arr) {
+        if (arr.length <= 1) return arr;
+
+        let n = arr[0];
+        let left = arr.slice(1).filter(x => x < n);
+        let right = arr.slice(1).filter(x => x >= n);
+
+        return [...quickSort(left), n, ...quickSort(right)];
+    }
+
+    let a = prompt("Enter numbers separated by commas ");
+    let resultBox = document.getElementById("result");
+
+    if (a) {
+            let arr = a.split(",").map(Number);
+
+        if (arr.some(isNaN)) {
+            resultBox.innerHTML = "Invalid input. Please enter only numbers.";
+        }
+        else {
+            let sorted = quickSort(arr);
+            resultBox.innerHTML = "Sorted Array: " + sorted.join(", ");
+        }
+    }
+    else {
+        resultBox.innerHTML = "No input provided.";
+    }
+</script>
+
+</body>
+</html>

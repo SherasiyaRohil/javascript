@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Word in Array</title>
+</head>
+<body>
+
+<h2>Search Word in Sentence</h2>
+    <div id="result" style="font-weight: bold; color: green;"></div>
+
+<script>
+
+        let s = ["JavaScript", "is", "a", "fun", "and", "powerful", "language"];
+
+
+        let n = prompt("Enter word to search:");
+        let resultBox = document.getElementById("result");
+        let index = -1;
+
+
+        for (let i = 0; i < s.length; i++)
+        {
+            if (s[i].toLowerCase() === n.toLowerCase()) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index !== -1) {
+            resultBox.innerHTML = "Word found at index: " + index;
+        }
+        else {
+            resultBox.innerHTML = "Word not found in the sentence.";
+        }
+</script>
+
+</body>
+</html>

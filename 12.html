@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n= parseInt(prompt("enter a size="));
+        let arr =[];
+        for(i=0;i<n;i++)
+        {
+            arr.push (parseInt(prompt("enter a element:"+(i+1)+":")));
+        
+        
+        }
+            document.write("array : "+arr);
+            document.write("<br>");
+            document.write("sort array : "+arr.sort((a,b)=>a-b));
+            document.write("<br>");
+            document.write("sort array : "+arr.sort((a,b)=>b-a));
+    
+        
+    </script>
+</body>
+</html>
