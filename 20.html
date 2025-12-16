@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table border="2" style="background-color: rgba(128, 128, 128, 0.466); height: 50vh; width: 50vh;">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="ans">
+                </td>
+            
+            </tr>
+            <tr>
+                <td><button onclick="clearAll(AC)">AC</button></td>
+                <td><button onclick="clearAll()">C</button></td>
+                <td><button onclick="display('%')">%</button></td>
+                <td><button onclick="display('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display(7)">7</button></td>
+                <td><button onclick="display(8)">8</button></td>
+                <td><button onclick="display(9)">9</button></td>
+                <td><button onclick="display('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display(4)">4</button></td>
+                <td><button onclick="display(5)">5</button></td>
+                <td><button onclick="display(6)">6</button></td>
+                <td><button onclick="display('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display(1)">1</button></td>
+                <td><button onclick="display(2)">2</button></td>
+                <td><button onclick="display(3)">3</button></td>
+                <td><button onclick="display('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('00')">00</button></td>
+                <td><button onclick="display(0)">0</button></td>
+                <td><button onclick="display('.')">.</button></td>
+                <td><button onclick="clearone('BACK')">BACK</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="displayAns()">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function clearAll(){
+            a=document.getElementById("ans");
+            a.value = "";
+        }
+        function display(value){
+            b = document.getElementById("ans")
+            b.value += value;
+        }
+        function displayAns(){
+            var ans=document.getElementById("ans")
+            final=eval(ans.value);
+            ans.value=final;
+        }
+    </script>
+</body>
+</html>
