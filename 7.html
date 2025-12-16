@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n1=parseFloat(prompt("enter a number 1="));
+        const n2=parseFloat(prompt("enter a number 2="));
+        var i,j;      
+        for(i=n1;i<=n2;i++)
+        {
+            flag=true;
+                for(j=2;j<i;j++)
+                {
+                    if(i%j==0)
+                    {
+                        flag=false;
+                        break;
+                    }
+                }
+                if(flag==true)
+                {
+                    document.write(i);
+                }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number to Words</title>
+</head>
+<body>
+
+<h2>Number to Words Converter</h2>
+<div id="result" style="font-weight: bold; color: blue;"></div>
+
+<script>
+    function numberToWords(num) {
+    const ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+                    "sixteen", "seventeen", "eighteen", "nineteen"];
+    const tens = ["", "", "twenty", "thirty", "forty", "fifty",
+                    "sixty", "seventy", "eighty", "ninety"];
+
+        if (num < 10){
+
+            return ones[num];
+        }
+        if (num < 20){
+
+            return teens[num - 10];
+        }
+        if (num < 100) {
+            let t = Math.floor(num / 10);
+            let o = num % 10;
+            return tens[t] + (o ? "-" + ones[o] : "");
+        }
+        if (num < 1000) {
+            let h = Math.floor(num / 100);
+            let rest = num % 100;
+            return ones[h] + " hundred" + (rest ? " and " + numberToWords(rest) : "");
+        }
+        return "out of range";
+}
+
+let input = prompt("Enter a number between 0 and 999:");
+let resultBox = document.getElementById("result");
+
+if (isNaN(input)) {
+        resultBox.innerHTML = "not a number";
+}
+else {
+    let number = parseInt(input);
+    if (number < 0 || number > 999) {
+        
+        resultBox.innerHTML = "out of range";
+    }
+    else {
+        resultBox.innerHTML = "In words: " + numberToWords(number);
+    }
+}
+</script>
+
+</body>
+</html>
